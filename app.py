@@ -30,6 +30,15 @@ def get_day(day_id):
 def post_days():
     return jsonify({"success": True}), 201
 
+@app.route("/hello", methods=["GET"])
+def hello():
+    return jsonify({"message": "Hola mundo"})
+
+@app.route("/echo", methods=["POST"])
+def echo():
+    data = request.json  
+    return jsonify({"youSent": data}) 
+
 
 if __name__ == "__main__":
     app.run(debug=True)
