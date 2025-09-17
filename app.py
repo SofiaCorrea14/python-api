@@ -34,11 +34,6 @@ def post_days():
 def hello():
     return jsonify({"message": "Hola mundo"})
 
-@app.route("/echo", methods=["POST"])
-def echo():
-    data = request.json  
-    return jsonify({"youSent": data}) 
-
 
 if __name__ == "__main__":
     app.run(debug=True)
